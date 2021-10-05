@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//hexadecimal to decimal
 void hexaDecimalToDecimal(string n){
     int ans = 0;
 
@@ -22,6 +23,29 @@ void hexaDecimalToDecimal(string n){
 
     cout << ans;
 }
+//decimal to hexadecimal
+
+void decimalToHexadecimal(int n){
+    string ans = "";
+
+    while (n){
+        if (n%16 <=9){
+            ans = ans + to_string(n % 16);
+        }else{
+            char c = 'A' + n % 16 - 10;
+            ans += c;
+        }
+
+        n /= 16;
+    }
+    for (int i = ans.size() - 1; i >= 0;i--){
+        cout << ans[i];
+    }
+}
+
+
+
+
 int main()
 {
 
@@ -30,4 +54,5 @@ int main()
     cin >> n;
 
     hexaDecimalToDecimal(n);
+    decimalToHexadecimal(n);
 }
